@@ -6,15 +6,13 @@ name : OldCam
 version: Nexus-OLD
 steps:
  - name: Nexus
-   image: archlinux:base-devel
+   image: panchajanya1999/archlinux:latest
    environment:
      token:
        from_secret: token
      chat_id:
        from_secret: chat_id
    commands:
-     - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
-     - pacman -Sy && pacman -S git bc inetutils python2 zip jdk-openjdk --noconfirm 
      - bash build.sh --old
 
 ---
@@ -25,15 +23,13 @@ name : NewCam
 version: Nexus-NEW
 steps:
  - name: Nexus
-   image: archlinux:base-devel
+   image: panchajanya1999/archlinux:latest
    environment:
      token:
        from_secret: token
      chat_id:
        from_secret: chat_id
    commands:
-     - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
-     - pacman -Sy && pacman -S git bc inetutils python2 zip jdk-openjdk --noconfirm 
      - bash build.sh --new
 
 ---
@@ -44,14 +40,12 @@ name : Qti-Old
 version: Nexus-QTI-OLD
 steps:
  - name: Nexus
-   image: archlinux:base-devel
+   image: panchajanya1999/archlinux:latest
    environment:
      token:
        from_secret: token
      chat_id:
        from_secret: chat_id
    commands:
-     - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
-     - pacman -Sy && pacman -S git bc inetutils python2 zip jdk-openjdk --noconfirm 
      - git apply QTI_HAPTICS.p
      - bash build.sh --qti
