@@ -11,7 +11,7 @@ KERNEL_DIR="$(pwd)"
 ZIPNAME="Nexus-EAS"
 
 # Specify compiler ( eva , azure , proton , arter , aosp & atom-x )
-COMPILER=aosp
+COMPILER=azure
 
 # Device Name and Model
 MODEL=Redmi Note 7
@@ -100,7 +100,7 @@ function exports() {
     export ARCH=arm64
     export SUBARCH=arm64
     export LOCALVERSION="-${VERSION}"
-    export KBUILD_BUILD_HOST=aRise
+    export KBUILD_BUILD_HOST=ArchLinux
     export KBUILD_BUILD_USER="ImPrashantt"
     export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
     export CI_BRANCH=$DRONE_BRANCH
